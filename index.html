@@ -20,8 +20,8 @@
 
     // Käsitellään muunnettu JSON-vastaus
     .then(function (responseJson) {
-      // Testataan onnistuuko json-luku ja päivitetään DOM elementtiin "vastaus"
-      document.getElementById("vastaus").innerHTML = "<p>Jatketaan harjoitusta</p>";
+    // Kutsutaan funktiota ja välitetään sille json-vastaus 
+    kerro(responseJson);
     })
 
     // Jos tuli jokin virhe, näytetään virheilmoitus
@@ -29,7 +29,16 @@
       document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
       console.error('Virhe JSON-tiedon haussa:', error);
     });
+
+    function kerro(data){
+    var teksti = "";
+    teksti = "<h1>" + data.otsikko + "</h1>";
+
+    // tähän tulee muiden tietojen käsittely kohta
+
+    document.getElementById("vastaus").innerHTML = teksti;
+    }
+
   </script>
 </body>
 </html>
-
