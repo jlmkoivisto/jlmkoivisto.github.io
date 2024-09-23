@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <title>JSON Example</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body> 
+  <!-- Div-elementti -->
+  <div id="vastaus"></div>
+
+  <script>
+    // Haetaan JSON-tiedosto fetch-komennolla
+    fetch('tietue.json')
+    
+    // Muunnetaan vastaus JSON-muotoon
+    .then(function (response) { 
+      return response.json();
+    })
+
+    // Käsitellään muunnettu JSON-vastaus
+    .then(function (responseJson) {
+      // Testataan onnistuuko json-luku ja päivitetään DOM elementtiin "vastaus"
+      document.getElementById("vastaus").innerHTML = "<p>Jatketaan harjoitusta</p>";
+    })
+
+    // Jos tuli jokin virhe, näytetään virheilmoitus
+    .catch(function (error) { 
+      document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+      console.error('Virhe JSON-tiedon haussa:', error);
+    });
+  </script>
+</body>
+</html>
+
