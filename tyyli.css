@@ -44,3 +44,14 @@ ul {
 li {
     margin: 5px 0;
 }
+
+#liikennekamera img {
+    max-width: 80%; 
+    height: auto;
+  }
+
+#saa-vastaus {
+    display: flex;
+    justify-content: space-around; 
+    margin-top: 20px;
+}
