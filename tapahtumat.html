@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <title>Tapahtumat</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="tyyli.css">
+</head>
+<body> 
+
+    <div class="scrollmenu">
+        <a href="index.html">Etusivu</a>
+        <a href="toteutus.html">Toteutus</a>
+        <a href="liikennekamera.html">Liikennekamera</a>
+        <a href="junat.html">Junat</a>
+        <a href="tapahtumat.html">Tapahtumat</a>
+        <a href="saa.html">Sää</a>
+    </div>
+  
+    <div id="tapahtumat">
+      <h1>Tampereella tapahtuu</h1>
+    </div> 
+    <div id="vastaus"></div>
+
+    <script>
+
+    fetch('https://api.visittampere.com/api/v1/eventztoday/event/all/?format=json&lang=fi&limit=5&offset=0')
+      .then(function (response) { 
+        return response.json();
+      })
+      .then(function (data) {
+        let teksti = "";
+        // Ensimmäiset 5 tapahtumaa
+        for (let i = 0; i < Math.min(5, data.length); i++) {
+          const tapahtuma = data[i];
+          
+          // Tapahtuman nimi ja kuvaus
+          teksti += `<h3>${tapahtuma.name}</h3>`;
+          teksti += `<p>${tapahtuma.description ? tapahtuma.description : 'Ei kuvausta saatavilla'}</p>`;
+          
+          // Tapahtuman osoite (jos saatavilla)
+          if (tapahtuma.locations && tapahtuma.locations.length > 0) {
+            teksti += `<p>Sijainti: ${tapahtuma.locations[0].address}</p>`;
+          }
+
+          // Tapahtuman kuva (jos saatavilla)
+          if (tapahtuma.images && tapahtuma.images.length > 0) {
+            teksti += `<img src="${tapahtuma.images[0].url}" alt="Tapahtuman kuva" width="300">`;
+          }
+
+          // Tapahtuman URL
+          teksti += `<p><a href="${tapahtuma.url}" target="_blank">Lisätietoja</a></p>`;
+        }
+        // Näytetään tapahtumat sivulla
+        document.getElementById("vastaus").innerHTML = teksti;
+      })
+      .catch(function (error) { 
+        console.error('Virhe tietojen haussa:', error);
+        document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+      });
+    </script>
+</body>
+</html>
