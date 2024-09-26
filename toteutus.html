@@ -1,66 +1,58 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-  <title>JSON Example</title>  
+  <title>Toteutus</title>  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="tyyli.css">
 </head>
 <body> 
 
-  <div class="scrollmenu">
-    <a href="#koti">Etusivu</a>
-    <a href="toteutus.html">Toteutus</a>
-  </div>
-
-  <div id="vastaus"></div>
-
-  <script>
-    // Haetaan JSON-tiedosto fetch-komennolla
-    fetch('tietue.json')
+    <div class="scrollmenu">
+        <a href="#koti">Etusivu</a>
+        <a href="toteutus.html">Toteutus</a>
+    </div>
     
-    // Muunnetaan vastaus JSON-muotoon
+
+    <script>
+
+    fetch('tokatietue.json')
+    
     .then(function (response) { 
       return response.json();
     })
 
-    // Käsitellään muunnettu JSON-vastaus
-    .then(function (responseJson) {
-      // Kutsutaan funktiota ja välitetään sille json-vastaus 
-      kerro(responseJson);
+    .then(function (data) {
+        var teksti = "";
+
+        // Otsikko
+        teksti += "<h1>" + data.otsikko + "</h1>";
+
+        // Osallistujamäärä ja muut tiedot
+        teksti += "<p><strong>Osallistujamäärä:</strong> " + data.osallistujamaara + "</p>";
+        teksti += "<p><strong>Kesto:</strong> " + data.kesto + "</p>";
+        teksti += "<p><strong>Ajankohta:</strong> " + data.ajankohta + "</p>";
+
+        // Kuva
+        teksti += "<p><img src='" + data.kuva + "' alt='Toteutuksen kuva' style='max-width: 100%; height: auto;'></p>";
+
+        // Osallistujat-lista
+        teksti += "<h2>Osallistujat</h2><ul>";
+        for (var i = 0; i < data.osallistujat.length; i++) {
+            teksti += "<li>" + data.osallistujat[i] + "</li>";
+        }
+        teksti += "</ul>";
+
+        // Näytetään teksti HTML-sivulla
+        document.getElementById("toteutus").innerHTML = teksti;
     })
 
     // Jos tuli jokin virhe, näytetään virheilmoitus
     .catch(function (error) { 
-      document.getElementById("vastaus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+      document.getElementById("toteutus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
       console.error('Virhe JSON-tiedon haussa:', error);
     });
 
-    function kerro(data) {
-      var teksti = "";
-      teksti = "<h1>" + data.otsikko + "</h1>";
-      teksti = teksti + "<p>" + data.kuvaus + "</p>";
-      teksti = teksti + "<p><img src='" + data.kuva + "' alt='toimisto' ></p>";
-      teksti = teksti + "<h3>Opintojakso: " + data.opintojakso.nimi + "</h3>";
-
-      // Lisätään opintojakson sisältö listaan
-      teksti = teksti + "<ul>";
-      for (var i = 0; i < data.sisalto.length; i++) {
-        teksti = teksti + "<li>" + data.sisalto[i] + "</li>";
-      }
-      teksti = teksti + "</ul>";
-
-      // Lisätään tekniikat listaan hyperlinkkeineen
-      teksti = teksti + "<h2>Käytetyt tekniikat</h2><ul>";
-      for (var i = 0; i < data.tekniikat.length; i++) {
-        teksti = teksti + "<li><a href='" + data.tekniikat[i].linkki + "'>" + data.tekniikat[i].aihe + "</a></li>";
-      }
-      teksti = teksti + "</ul>";
-
-      // Päivitetään div-elementti "vastaus"
-      document.getElementById("vastaus").innerHTML = teksti;
-    }
-
-  </script>
+    </script>
 </body>
 </html>
