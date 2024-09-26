@@ -1,5 +1,5 @@
 body {
-    background-color: #e7fefc;
+    background-color: #f3f3f3;
     font-family: Tahoma, sans-serif;
 }
 
@@ -14,7 +14,7 @@ h1 {
     
 }
 
-h2 {
+h2, h3, h4, h5, h6 {
     font-size: 20px;
     color: #383c42;
 }
@@ -35,4 +35,12 @@ div.scrollmenu a {
 
 div.scrollmenu a:hover {
     background-color: #707375;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
 }
