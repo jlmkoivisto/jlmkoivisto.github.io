@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <title>Toteutus</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="tyyli.css">
+</head>
+<body> 
+
+    <div class="scrollmenu">
+        <a href="#koti">Etusivu</a>
+        <a href="#toteutus">Toteutus</a>
+    </div>
+
+    <div id="toteutus">
+    </div>
+
+    <script>
+
+    fetch('tokatietue.json')
+    
+    .then(function (response) { 
+      return response.json();
+    })
+
+    .then(function (data) {
+        var teksti = "";
+
+        // Otsikko
+        teksti += "<h1>" + data.otsikko + "</h1>";
+
+        // Osallistujamäärä ja muut tiedot
+        teksti += "<p><strong>Osallistujamäärä:</strong> " + data.osallistujamaara + "</p>";
+        teksti += "<p><strong>Kesto:</strong> " + data.kesto + "</p>";
+        teksti += "<p><strong>Ajankohta:</strong> " + data.ajankohta + "</p>";
+
+        // Kuva
+        teksti += "<p><img src='" + data.kuva + "' alt='Toteutuksen kuva' style='max-width: 100%; height: auto;'></p>";
+
+        // Osallistujat-lista
+        teksti += "<h2>Osallistujat</h2><ul>";
+        for (var i = 0; i < data.osallistujat.length; i++) {
+            teksti += "<li>" + data.osallistujat[i] + "</li>";
+        }
+        teksti += "</ul>";
+
+        // Näytetään teksti HTML-sivulla
+        document.getElementById("toteutus").innerHTML = teksti;
+    })
+
+    // Jos tuli jokin virhe, näytetään virheilmoitus
+    .catch(function (error) { 
+      document.getElementById("toteutus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+      console.error('Virhe JSON-tiedon haussa:', error);
+    });
+
+    </script>
+
+</body>
+</html>
+
