@@ -12,10 +12,10 @@
         <a href="#koti">Etusivu</a>
         <a href="toteutus.html">Toteutus</a>
     </div>
-    
+  
+    <div id="toteutus"></div> 
 
     <script>
-
     fetch('tokatietue.json')
     
     .then(function (response) { 
@@ -52,7 +52,6 @@
       document.getElementById("toteutus").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
       console.error('Virhe JSON-tiedon haussa:', error);
     });
-
     </script>
 </body>
 </html>
