@@ -1,69 +1,57 @@
-    /* taustan väri */
-    .navbar-custom {
-      background-color:#0f1720;
+body {
+    background-color: #f3f3f3;
+    font-family: Tahoma, sans-serif;
+}
+
+p {
+    font-size: 14px;
+    color: #55585a;
+}
+
+h1 {
+    font-size: 30px;
+    color: #383c42;
+    
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: 20px;
+    color: #383c42;
+}
+
+div.scrollmenu {
+    background-color: #2d685a;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #707375;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+#liikennekamera img {
+    max-width: 80%; 
+    height: auto;
   }
 
-  /* brandin ja tekstin väri */
-  .navbar-custom .navbar-brand,
-  .navbar-custom .navbar-text{
-      color: #b0d0e4;
-  }
-  
-  /* linkin väri */
-  .navbar-custom .navbar-nav .nav-link {
-      color: #bdbdbd;
-  }
-  
-  /* aktiivisen & hover-linkin väri */
-  .navbar-custom .nav-item.active .nav-link,
-  .navbar-custom .nav-item:hover .nav-link {
-      color: #6d6d6d
-  }
-  
-  .nav-link.active {
-      color: white !important;
-    }
-  
-  .custom-toggler .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-    }
-  
-  body { position: relative; 
-    }
-  
-  .custom-img {
-      width: 100%;
-      max-width: 500px;
-    }
-  
-  .img-rounded-corners-1 {
-      border-radius: 5% 5% 5% 5%;
-    }
-  
-  .img-rounded-corners-2 {
-      border-radius: 5% 5% 5% 5%;
-    }
-  
-  .btn-link {
-      font-weight: bold;
-      color: #000;
-      text-decoration: none;
-      background-color: transparent;
-      border: none;
-      display: block;
-      width: 100%;
-    }
-    
-  .btn-link:hover, .btn-link:focus {
-      text-decoration: underline;
-      color: #436c87;
-    }
-  
-    #cameras-lenses, #care-transport, #accessories, #filters {
-      padding-top: 60px;
-      padding-bottom: 50px;
-    }
-    
-    .carousel-caption h3, .carousel-caption p {
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-    }
+#saa-vastaus {
+    display: flex;
+    justify-content: space-around; 
+    margin-top: 20px;
+}
