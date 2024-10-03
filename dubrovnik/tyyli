@@ -58,11 +58,7 @@
       text-decoration: underline;
       color: #436c87;
     }
-  
-    #cameras-lenses, #care-transport, #accessories, #filters {
-      padding-top: 60px;
-      padding-bottom: 50px;
-    }
     
     .carousel-caption h3, .carousel-caption p {
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
