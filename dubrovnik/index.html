@@ -1,64 +1,220 @@
-    /* taustan väri */
-    .navbar-custom {
-      background-color:#0f1720;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>City of Dubrovnik</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="tyyli.css">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  /* brandin ja tekstin väri */
-  .navbar-custom .navbar-brand,
-  .navbar-custom .navbar-text{
-      color: #b0d0e4;
-  }
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="tyyli.css">
   
-  /* linkin väri */
-  .navbar-custom .navbar-nav .nav-link {
-      color: #bdbdbd;
-  }
+  <!-- Bootstrap JS (including Popper.js and Bootstrap.bundle.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
-  /* aktiivisen & hover-linkin väri */
-  .navbar-custom .nav-item.active .nav-link,
-  .navbar-custom .nav-item:hover .nav-link {
-      color: #6d6d6d
-  }
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
+<div id="top"></div>
+
+
+<!-- Navbar -->
+<nav id="navbar" class="navbar navbar-custom fixed-top navbar-expand-sm">
+  <div class="container-fluid d-flex align-items-center">
+    <a class="navbar-brand" href="#top">
+      <b>City of Dubrovnik</b>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#top">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#weather">Weather</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel -->
+<section id="top">
+<div id="demo" class="carousel slide mt-5" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+  </div>
   
-  .nav-link.active {
-      color: white !important;
-    }
+<!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="dubrovnik1.jpg" alt="View from the city walls" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>View From the City Walls</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="dubrovnik2.jpg" alt=" A bell tower, a busy street, rooftops" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Ring the Bells</h3>
+      </div> 
+    </div>
+    <div class="carousel-item">
+      <img src="dubrovnik3.jpg" alt="View of a port, boats and city walls" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>Port Dubrovnik</h3>
+      </div>  
+    </div>
+    <div class="carousel-item">
+      <img src="dubrovnik4.jpg" alt="Worn houses of the old town" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>The Old Town</h3>
+      </div>  
+    </div>
+  </div>
   
-  .custom-toggler .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+<!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</section>
+
+<!-- About Section -->
+<section id="about" style="padding-top: 60px;">
+  <div class="container">
+    <!-- Ensimmäinen Grid -->
+    <div class="row">
+      <div class="col-md-4">
+        <img src="grid1.jpg" alt="indoor view of marble stairs" class="img-fluid custom-img img-rounded-corners-1">
+      </div>
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="text-left">About Dubrovnik</h2>
+        <p class="text-left">
+          Dubrovnik is a historic city located on the southern coast of <b>Croatia</b>, 
+          along the Adriatic Sea. Often referred to as the "Pearl of the Adriatic," 
+          Dubrovnik is renowned for its stunning medieval architecture, well-preserved 
+          city walls, and crystal-clear waters.<br><br>
+      
+          Dubrovnik’s city walls are among its most iconic features. Built between the 
+          12th and 17th centuries, they stretch for about 2 kilometers, offering 
+          stunning views of the city, the Adriatic Sea, and the surrounding islands. 
+          Visitors can walk along these walls to get a unique perspective on the historic center.
+        </p>
+      </div>
+    </div> 
+
+    <!-- Toinen Grid -->
+    <div class="row" style="padding-top: 20px;">
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="text-right">Old Town and Landmarks</h2>
+        <p class="text-right">
+          <b>Stradun (Placa):</b> The main street of the Old Town, a broad limestone-paved avenue that 
+          runs from the Pile Gate to the Ploče Gate. Lined with historic buildings, it’s the 
+          heart of the city and a popular spot for locals and tourists alike.<br>
+          <b>Rector's Palace:</b> A beautiful Gothic-Renaissance palace that served as the seat 
+          of the government during the Republic of Ragusa. Today, it houses a museum 
+          showcasing Dubrovnik’s history.<br>
+          <b>Dubrovnik Cathedral:</b> Built on the ruins of an older church destroyed 
+          in the 1667 earthquake, the Baroque-style Dubrovnik Cathedral has a 
+          treasury with relics, including items believed to be from St. Blaise, 
+          the city’s patron saint.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <img src="grid2.jpg" alt="bell tower and view of rooftops" class="img-fluid custom-img img-rounded-corners-2">
+      </div>
+    </div>
+
+    <!-- Kolmas Grid -->
+    <div class="row" style="padding-top: 20px;">
+      <div class="col-md-4">
+        <img src="grid3.jpg" alt="old town roofttops and sea and an island on the background" class="img-fluid custom-img img-rounded-corners-1">
+      </div>
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2 class="text-left">"King's Landing"</h2>
+        <p class="text-left">
+          Dubrovnik’s medieval architecture and coastal views made it a popular filming 
+          location for the TV series <i>Game of Thrones</i>, where it served as the backdrop 
+          for King’s Landing, further boosting its global fame.<br><br>
+          Old Town is a major tourist destination, drawing visitors from all over the world. 
+          The city takes great care in preserving its historical monuments, and restrictions 
+          on new developments in the Old Town ensure that its authentic 
+          medieval character remains intact.
+          The Old Town’s narrow, cobblestone streets are full of surprises, 
+          from quaint cafés and boutique shops to small chapels and hidden courtyards. 
+          The tight layout and lack of cars give the city a timeless, old-world charm.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Weather -->
+<section id="weather" style="padding-top: 40px; padding-bottom: 30px;">
+  <div id="saa" class="container">
+    <h2 class="text-center">Local Weather</h2>
+    <div id="saa-vastaus" class="d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6">
+        <div class="card text-center">
+          <!-- Picture -->
+          <img src="weather.jpg" class="card-img-top" alt="Weather image">
+          <div class="card-body">
+            <div class="weather-info" id="dubrovnik">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const apiKey = '314de1b8dabfbace7321a5ff474e27d1';
+
+    function fetchWeather(city, elementId) {
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lang=en&q=${city}&units=metric&APPID=${apiKey}`)
+        .then(response => response.json())
+        .then(data => displayWeather(data, elementId))
+        .catch(error => document.getElementById(elementId).innerHTML = "<p>Unable to retrieve information</p>");
     }
-  
-  body { position: relative; 
+
+    function displayWeather(data, elementId) {
+      const image = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+      let text = `<h2>${data.name}</h2>`;
+      text += `<p>${data.weather[0].description}</p>`;
+      text += `<p>Temperature: ${data.main.temp} &deg;C</p>`;
+      text += `<p>Wind: ${data.wind.speed} m/s</p>`;
+      text += `<p><img src='${image}' alt='weather image'></p>`;
+      document.getElementById(elementId).innerHTML = text;
     }
-  
-  .custom-img {
-      width: 100%;
-      max-width: 500px;
-    }
-  
-  .img-rounded-corners-1 {
-      border-radius: 5% 5% 5% 5%;
-    }
-  
-  .img-rounded-corners-2 {
-      border-radius: 5% 5% 5% 5%;
-    }
-  
-  .btn-link {
-      font-weight: bold;
-      color: #000;
-      text-decoration: none;
-      background-color: transparent;
-      border: none;
-      display: block;
-      width: 100%;
-    }
-    
-  .btn-link:hover, .btn-link:focus {
-      text-decoration: underline;
-      color: #436c87;
-    }
-    
-    .carousel-caption h3, .carousel-caption p {
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-    }
+
+    fetchWeather('Dubrovnik', 'dubrovnik');
+  </script>
+</section>
+
+<footer class="bg-dark text-white text-center p-4">
+  <p>2024 Digitekniikat DIG007AS2A-3012. Images by JK</p>
+</footer>
+
+</body>
+</html>
